@@ -1,0 +1,40 @@
+.page {
+    position: relative;
+}
+
+
+/* 轮播图 */
+
+.swiper {
+    width: 100%;
+    margin: 0rpx;
+}
+
+.swiper image {
+    display: inline;
+}
+
+.add {
+    width: 100rpx;
+    height: 100rpx;
+    position: absolute;
+    right: 50rpx;
+    bottom: 120rpx;
+    border: 1px solid #000;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    z-index: 111;
+}
+
+.form {
+    bottom: 320rpx;
+}
+
+.add image {
+    width: 80rpx;
+    height: 80rpx;
+    display: block;
+    text-align: center;
+    margin-top: 8rpx;
+}

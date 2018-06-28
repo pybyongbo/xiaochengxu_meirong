@@ -1,0 +1,74 @@
+
+<view class="page">
+   <form bindsubmit="formSubmit" bindreset="">
+   
+    <view class="section">
+        <view class="label">*姓名:</view>
+        <input placeholder-class="phcolor" value="" name="username" class="text" placeholder="请填写你的姓名"/>
+    </view>
+
+    <view class="section">
+        <view class="label">*时间:</view>
+         <view class="ar_date_time">
+            <view class="ar_date">
+                <image src="/images/date.png"></image>
+                <picker mode="date" placeholder-class="phcolor" class="text" placeholder="选择日期" name="date" value="{{date}}" start="2018-07-01" end="2019-07-01" bindchange="bindDateChange" >
+                    <view>
+                        {{date}}
+                    </view>
+                </picker>
+            </view>
+            <view class="ar_time">
+                <image src="/images/time.png"></image>
+                <picker mode="time" placeholder-class="phcolor" class="text" placeholder="选择时间" name="time" value="{{time}}" start="01:00" end="24:00" bindchange="bindTimeChange">
+                    <view>
+                        {{time}}
+                    </view>
+                </picker>
+            </view>
+        </view>
+
+    </view>
+
+    <view class="section">
+        <view class="label">*联系方式:</view>
+        <input placeholder-class="phcolor" value="" name="tel" type="tel" class="text" placeholder="请填写你的手机号"/>
+    </view>
+
+    <view class="section">
+        <view class="label">*预约项目:</view>
+        <input placeholder-class="phcolor" class="text disabled" name="appointitem" value="{{catalogs[catalogSelect-1].catalogName}}" bindtap="powerDrawer" data-statu="open" placeholder="点击选择预约项目" disabled/>
+        
+    </view>
+
+    <view class="section">
+        <view class="label">*备注内容:</view>
+        <textarea placeholder-class="phcolor" class="text textarea" placeholder="{{holderText}}" name="comment" value=""  maxlength="120"/>
+    </view>
+
+    <button class="btn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" formType="submit"> 提交预约 </button>
+
+
+    <!--mask-->  
+    <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showModalStatus}}"></view> 
+
+    <!--使用animation属性指定需要执行的动画-->  
+    <view animation="{{animationData}}" class="drawer_attr_box" wx:if="{{showModalStatus}}">  
+    <!--drawer content-->  
+        <view class="drawer_content">  
+        <block wx:for="{{catalogs}}" wx:key="{{index}}">
+            <view data-select="{{item.select}}" class="{{item.select == catalogSelect ? 'active':''}} drawer_title line" bindtap="chooseCatalog">{{item.catalogName}}</view>  
+        </block>
+        <!-- <view class="drawer_title line">美甲项目</view>  
+            <view class="drawer_title line">美瞳项目</view>  
+            <view class="drawer_title line">护肤项目</view> 
+            <view class="drawer_title line">眉形重塑</view>  
+            <view class="drawer_title line">其他项目</view> 
+        -->  
+        </view>  
+    </view>
+
+    </form>
+
+</view>

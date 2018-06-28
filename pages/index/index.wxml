@@ -1,0 +1,31 @@
+<!--list.wxml-->
+<view class="page">
+    <block>
+       <!--banner-->
+        <view class="swiper">
+            <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"
+                    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+                <block wx:for-items="{{banner_url}}" wx:key="item.id">
+                    <swiper-item>
+                        <block wx:if="{{item}}">
+                        <image src="{{item}}"  mode="aspectFill"/>
+                        </block>
+                        <block wx:else>
+                        <image src="../../images/default_pic.png" mode="aspectFill"></image>
+                        </block>
+                    </swiper-item>
+                </block>
+            </swiper>
+        </view>
+    </block>
+
+    <view class="add" bindtap="add">
+        <image src="../../images/compose.png"></image>
+    </view>
+
+    <view class="add form" bindtap="add2">
+        <image src="../../images/appointment.png"></image>
+    </view>
+
+
+</view>

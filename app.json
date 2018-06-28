@@ -1,0 +1,36 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/form/form",
+        "pages/contact/contact"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#6caae4",
+        "navigationBarTitleText": "小程序测试",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#a9b7b7",
+        "selectedColor": "#11cd6e",
+        "borderStyle": "white",
+        "list": [{
+            "selectedIconPath": "images/home.png",
+            "iconPath": "images/home.png",
+            "pagePath": "pages/index/index",
+            "text": "首页"
+        }, {
+            "selectedIconPath": "images/appointment.png",
+            "iconPath": "images/appointment.png",
+            "pagePath": "pages/form/form",
+            "text": "预约"
+        }, {
+            "selectedIconPath": "images/contact.png",
+            "iconPath": "images/contact.png",
+            "pagePath": "pages/contact/contact",
+            "text": "联系"
+        }]
+    }
+
+
+}

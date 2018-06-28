@@ -1,0 +1,23 @@
+<!--index.wxml-->
+<view class="page">
+    <view class="page-t">
+        
+            <text class="ar_cont_h1">联系方式</text>
+
+        <view class="drawer_title line">
+                <image src="../../images/contact.png"></image>
+                地址:天津市和平11号
+            </view>  
+           <view class="drawer_title line">
+                <image src="../../images/appointment.png"></image>
+                手机:13456788890
+            </view>  
+            <view class="drawer_title line">
+                <image src="../../images/appointment.png"></image>
+                微信:bbnbs1234567
+            </view>  
+    </view>
+
+
+   
+</view>
