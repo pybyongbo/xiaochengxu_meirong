@@ -1,21 +1,29 @@
 <!--index.wxml-->
 <view class="page">
     <view class="page-t">
-        
+        <!--
             <text class="ar_cont_h1">联系方式</text>
+        -->
 
         <view class="drawer_title line">
-                <image src="../../images/contact.png"></image>
-                地址:天津市和平11号
+                <image src="../../images/address.png"></image>
+                <text>地址:天津市和平区南京路305号</text>
             </view>  
            <view class="drawer_title line">
-                <image src="../../images/appointment.png"></image>
-                手机:13456788890
+                <image src="../../images/tel.png"></image>
+                <text>手机:13456788890</text>
             </view>  
             <view class="drawer_title line">
-                <image src="../../images/appointment.png"></image>
-                微信:bbnbs1234567
+                <image src="../../images/wechat.png"></image>
+                <text>微信:bbnbs1234567</text>
             </view>  
+
+            <view class="map_container"> 
+                <map class="map" id="map" longitude="117.187499" latitude="39.126306" scale="14" show-location="true" markers="{{markers}}" bindmarkertap="makertap"></map> 
+                </view> 
+                <view class="rgc_info"> 
+                <text class="map-tips">天津市和平区南京路305号</text> 
+            </view>
     </view>
 
 

@@ -33,17 +33,41 @@
     border-bottom: 1px solid #f8f8f8;
 }
 
+.drawer_title {
+    padding-left: 10%;
+    overflow: hidden;
+}
+
 .drawer_title:last-child {
     border-bottom: none;
 }
 
 .drawer_title image {
-    width: 50rpx;
-    height: 50rpx;
-    position: absolute;
-    display: inline-block;
-    top: -2rpx;
-    left: 170rpx;
+    width: 45rpx;
+    height: 45rpx;
+    margin-right: 5rpx;
+    float: left;
     text-align: center;
-    margin-top: 22rpx;
+}
+
+.drawer_title text {
+    float: left;
+}
+
+.map_container {
+    height: 380px;
+    width: 100%;
+}
+
+.map-tips {
+    color: #666;
+    clear: both;
+    padding-top: 30rpx;
+    font-size: 36rpx;
+    padding-left: 20rpx;
+}
+
+.map {
+    height: 100%;
+    width: 100%;
 }

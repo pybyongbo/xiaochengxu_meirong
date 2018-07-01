@@ -32,7 +32,7 @@
 
     <view class="section">
         <view class="label">*联系方式:</view>
-        <input placeholder-class="phcolor" value="" name="tel" type="tel" class="text" placeholder="请填写你的手机号"/>
+        <input placeholder-class="phcolor" value="" name="tel" type="number" class="text" placeholder="请填写你的手机号"/>
     </view>
 
     <view class="section">
