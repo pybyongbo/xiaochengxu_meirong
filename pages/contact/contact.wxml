@@ -4,7 +4,6 @@
         <!--
             <text class="ar_cont_h1">联系方式</text>
         -->
-
         <view class="drawer_title line">
                 <image src="../../images/address.png"></image>
                 <text>地址:天津市和平区南京路305号</text>

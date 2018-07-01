@@ -55,7 +55,7 @@
 }
 
 .map_container {
-    height: 380px;
+    height: 680rpx;
     width: 100%;
 }
 
