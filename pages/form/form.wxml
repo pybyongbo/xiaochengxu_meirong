@@ -4,7 +4,7 @@
    
     <view class="section">
         <view class="label">*姓名:</view>
-        <input placeholder-class="phcolor" value="" name="username" class="text" placeholder="请填写你的姓名"/>
+        <input placeholder-class="phcolor" value="{{username}}" name="username" class="text" placeholder="请填写你的姓名"/>
     </view>
 
     <view class="section">
@@ -32,7 +32,7 @@
 
     <view class="section">
         <view class="label">*联系方式:</view>
-        <input placeholder-class="phcolor" value="" name="tel" type="number" class="text" placeholder="请填写你的手机号"/>
+        <input placeholder-class="phcolor" value="{{tel}}" name="tel" type="number" class="text" placeholder="请填写你的手机号"/>
     </view>
 
     <view class="section">
@@ -43,7 +43,7 @@
 
     <view class="section">
         <view class="label">*备注内容:</view>
-        <textarea placeholder-class="phcolor" class="text textarea" placeholder="{{holderText}}" name="comment" value=""  maxlength="120"/>
+        <textarea placeholder-class="phcolor" class="text textarea" placeholder="{{holderText}}" name="comment" value="{{comment}}"  maxlength="120"/>
     </view>
 
     <button class="btn" type="primary" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"

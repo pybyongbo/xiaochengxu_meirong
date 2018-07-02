@@ -1,60 +1,64 @@
-//预约表单页面
+//预约表单页面 11cd6e
 var util = require('../../utils/util')
 Page({
     data: {
         holderText: '请输入备注信息',
         showModalStatus: false,
+        username:"",
+        tel:"",
+        appointitem:"",
+        comment:"",
         date: util.formatTime(new Date()).date,
         time: util.formatTime(new Date()).time,
         bookToastHidden: true,
         //预约项目
         catalogs: [{
-            "catalogName": "纹绣项目",
-            "select": 1
-        },
-        {
-            "catalogName": "美甲项目",
-            "select": 2
-        },
-        {
-            "catalogName": "美瞳项目",
-            "select": 3
-        },
-        {
-            "catalogName": "护肤项目",
-            "select": 4
-        },
-        {
-            "catalogName": "眉形重塑",
-            "select": 5
-        },
-        {
-            "catalogName": "其他项目",
-            "select": 6
-        }
+                "catalogName": "纹绣项目",
+                "select": 1
+            },
+            {
+                "catalogName": "美甲项目",
+                "select": 2
+            },
+            {
+                "catalogName": "美瞳项目",
+                "select": 3
+            },
+            {
+                "catalogName": "护肤项目",
+                "select": 4
+            },
+            {
+                "catalogName": "眉形重塑",
+                "select": 5
+            },
+            {
+                "catalogName": "其他项目",
+                "select": 6
+            }
         ],
         catalogSelect: 0, //判断是否选中
     },
 
     // 日期选择
-    bindDateChange: function (e) {
+    bindDateChange: function(e) {
         console.log('date picker发送选择改变，携带值为', e.detail.value)
         this.setData({
             date: e.detail.value
         })
     },
     // 时间选择
-    bindTimeChange: function (e) {
+    bindTimeChange: function(e) {
         console.log('time picker发送选择改变，携带值为', e.detail.value)
         this.setData({
             time: e.detail.value
         })
     },
-    powerDrawer: function (e) {
+    powerDrawer: function(e) {
         var currentStatu = e.currentTarget.dataset.statu;
         this.util(currentStatu)
     },
-    util: function (currentStatu) {
+    util: function(currentStatu) {
         /* 动画部分 */
         // 第1步：创建动画实例   
         var animation = wx.createAnimation({
@@ -75,10 +79,10 @@ Page({
         })
 
         // 第5步：设置定时器到指定时候后，执行第二组动画  
-        setTimeout(function () {
+        setTimeout(function() {
             // 执行第二组动画：Y轴不偏移，停  
             animation.translateY(0).step()
-            // 给数据对象储存的第一组动画，更替为执行完第二组动画的动画对象  
+                // 给数据对象储存的第一组动画，更替为执行完第二组动画的动画对象  
             this.setData({
                 animationData: animation
             })
@@ -101,7 +105,7 @@ Page({
         }
     },
 
-    chooseCatalog: function (data) {
+    chooseCatalog: function(data) {
         var that = this;
         that.setData({ //把选中值放入判断值
             catalogSelect: data.currentTarget.dataset.select
@@ -109,7 +113,7 @@ Page({
         console.log(data.currentTarget.dataset.select);
 
     },
-    formSubmit: function (e) {
+    formSubmit: function(e) {
         console.log(e);
         var warn = ""; //弹框时提示的内容
         var flag = true; //判断信息输入是否完整
@@ -152,24 +156,56 @@ Page({
 
             var formData = e.detail.value;
             wx.request({
-                url: 'local.tpadmin.com/index.php/User/reg',
-                data: formData,
+                url: 'https://zq.901web.com/index.php/Appointment/index',
+                method: 'POST',
                 header: {
-                    'Content-Type': 'application/json'
+                    // 'Content-Type': 'application/json' 
+                    "Content-Type": "application/x-www-form-urlencoded"
                 },
-                success: function (res) {
-                    console.log(res.data)
-                    // that.modalTap();
-                    wx.showModal({
-                        title: '预约提示',
-                        content: '预约成功,稍后会有客服人员与您联系',
-                        showCancel: false,
-                        success: function () {
-                            wx.switchTab({
-                                url: '../list/list'
-                            })
-                        }
-                    })
+                data: {
+                    username: e.detail.value.username,
+                    date: e.detail.value.date,
+                    time: e.detail.value.time,
+                    tel: e.detail.value.tel,
+                    appointitem:this.data.catalogSelect,
+                    comment: e.detail.value.comment
+                },
+                success: function(res) {
+                    console.log(res.data);
+
+                    if(res.data === 0) {
+                        wx.showModal({
+                            title: '预约提示',
+                            content: '预约成功,稍后会有客服人员与您联系',
+                            showCancel: false,
+                            success: function() {
+                                wx.switchTab({
+                                    url: '../index/index'
+                                });
+                                // this.setData({
+                                //     username: ""
+                                // })
+                            }
+                        });
+               
+                        that.setData({
+                            username: '',
+                            tel:'',
+                            catalogSelect:0,
+                            comment:''
+                        })
+                
+                
+                    } else {
+
+                        wx.showModal({
+                            title: '预约提示',
+                            content: '预约失败,请重新提交预约',
+                            showCancel: false
+                            
+                        })
+                    }
+                   
                 }
             })
 

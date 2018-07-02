@@ -12,23 +12,25 @@
     },
     "tabBar": {
         "color": "#a9b7b7",
-        "selectedColor": "#11cd6e",
+        "selectedColor": "#1AAD19", 
         "borderStyle": "white",
         "list": [{
-            "selectedIconPath": "images/home.png",
-            "iconPath": "images/home.png",
             "pagePath": "pages/index/index",
-            "text": "首页"
+            "text": "首页",
+            "iconPath": "/images/home.png",
+            "selectedIconPath": "/images/home_a.png"
+           
         }, {
-            "selectedIconPath": "images/appointment.png",
-            "iconPath": "images/appointment.png",
             "pagePath": "pages/form/form",
-            "text": "预约"
+            "text": "预约",
+            "iconPath": "/images/appointment.png",
+            "selectedIconPath": "/images/appointment_a.png"
+           
         }, {
-            "selectedIconPath": "images/contact.png",
-            "iconPath": "images/contact.png",
             "pagePath": "pages/contact/contact",
-            "text": "联系"
+            "text": "联系",
+            "iconPath": "/images/contact.png",
+            "selectedIconPath": "/images/contact_a.png"
         }]
     }
 
