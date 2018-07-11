@@ -6,6 +6,8 @@ Page({
         colors: ['red', 'orange', 'yellow', 'green', 'purple'],
         // banner 初始化
         banner_url: fileData.getBannerData(),
+        getcaseData: fileData.getcaseData(),
+        getproData: fileData.getproData(),
         indicatorDots: true,
         vertical: false,
         autoplay: true,
@@ -112,9 +114,7 @@ Page({
             //更新列表的状态
             // var arr = wx.getStorageSync('txt');
             this.setData({
-
                 lists: list
-
             });
 
         }

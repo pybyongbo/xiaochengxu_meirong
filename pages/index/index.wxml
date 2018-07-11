@@ -17,15 +17,36 @@
                 </block>
             </swiper>
         </view>
+
+        <!-- 成功案例-->
+        <view class="case_tit">
+            <image src="../../images/succ_case_tit.png" mode="aspectFill"></image>
+        </view>
+
+        <view class="case_pic">
+            <block wx:for-items="{{getcaseData}}" wx:key="item.caseId">
+                <view class="pic {{item.caseId%2===0?'even':''}}">
+                    <image src="{{item.imgUrl}}"  mode="aspectFill"/>
+                </view>
+            </block>
+        </view>
+
+        <!-- 成功案例-->
+        <view class="case_tit">
+            <image src="../../images/succ_case_tit2.png" mode="aspectFill"></image>
+        </view>
+        <view class="case_pic">
+            <block wx:for-items="{{getproData}}" wx:key="item.id">
+                <view class="pic {{item.id%2===0?'even':''}}">
+                    <image src="{{item.imgUrl}}"  mode="aspectFill"/>
+                    <text class="desc"> {{item.title}} </text>
+                </view>
+            </block>
+        </view>
+
     </block>
 
-    <view class="add" bindtap="add">
-        <image src="../../images/compose.png"></image>
-    </view>
-
-    <view class="add form" bindtap="add2">
-        <image src="../../images/appointment.png"></image>
-    </view>
+ 
 
 
 </view>

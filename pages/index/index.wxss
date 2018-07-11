@@ -14,7 +14,8 @@
     display: inline;
 }
 
-.add {
+
+/* .add {
     width: 100rpx;
     height: 100rpx;
     position: absolute;
@@ -29,7 +30,7 @@
 
 .form {
     bottom: 320rpx;
-}
+} 
 
 .add image {
     width: 80rpx;
@@ -37,4 +38,52 @@
     display: block;
     text-align: center;
     margin-top: 8rpx;
+}
+*/
+
+.case_tit {
+    width: 100%;
+    margin: 30rpx auto 10rpx;
+}
+
+.case_tit image {
+    width: 100%;
+    height: 120rpx;
+    margin: 0rpx;
+}
+
+.case_pic {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.case_pic view {
+    width: 40%;
+    margin-left: 2%;
+    margin-bottom: 15rpx;
+    flex-grow: 1;
+}
+
+.case_pic view.even {
+    margin-right: 2%;
+}
+
+.case_pic view image {
+    width: 94%;
+    height: 280rpx;
+    padding: 3px 5px;
+    border: 1px dashed #b8b8b8;
+    border-radius: 5px;
+}
+
+text.desc {
+    display: block;
+    text-align: center;
+    font-size: 28rpx;
+    background: #ff9013;
+    color: #fff;
+    padding: 8rpx 10rpx;
 }
