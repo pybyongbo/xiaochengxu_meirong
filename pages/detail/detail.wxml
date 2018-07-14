@@ -1,0 +1,28 @@
+<!--list.wxml-->
+<view class="page">
+    <block>
+       <!--项目标题-->
+        <view class="pro-title">
+           <text>{{detailObj.title}}</text> 
+        </view>
+
+        <!-- 成功案例-->
+        <view class="case_pro">
+            <image src="{{detailObj.imgUrl}}" mode="aspectFill"></image>
+        </view>
+
+        <!-- 成功案例-->
+       <view class="pro-title tl">
+           <text>详细内容</text> 
+        </view>
+
+        <view>
+           <text class="desc">{{detailObj.desc}}</text> 
+        </view>
+
+    </block>
+
+ 
+
+
+</view>

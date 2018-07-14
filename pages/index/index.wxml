@@ -37,7 +37,7 @@
         </view>
         <view class="case_pic">
             <block wx:for-items="{{getproData}}" wx:key="item.id">
-                <view class="pic {{item.id%2===0?'even':''}}">
+                <view class="pic {{item.id%2===0?'even':''}}" bindtap="navigateDetail" data-aid="{{item.id}}">
                     <image src="{{item.imgUrl}}"  mode="aspectFill"/>
                     <text class="desc"> {{item.title}} </text>
                 </view>
@@ -45,8 +45,42 @@
         </view>
 
     </block>
+        <view class="showpop" wx:if="{{showContact}}">
+        <image src="../../images/kf.png" bindtap="showwechat"></image>
+        </view>
+        <view class="showphone" wx:if="{{showContact}}">
+            
+            <image src="../../images/dh.png" bindtap="phonecallevent"></image>
+        </view>
 
- 
-
-
+     <view>
+    <view class="zhezao" hidden="{{flag}}">
+        <view class="t_w">
+            <!--右上角图标开始-->
+            <view class="t_image"  bindtap="conceal">
+            <image class="t_image1" src="../../images/close.png" ></image>
+            </view>
+            <!--右上角图标结束-->
+        
+            <!--弹出框开始-->
+            <view class="tanchu_view">
+            <view>
+                <view class="bg_view">加微信</view>
+                <view class="txtys">截屏添加美女小姐姐微信,和我聊聊~</view>
+                <!--确定开始-->
+                <view class="txtsure"  >
+                    <image src="../../images/ewm.jpg" ></image>
+                <!--
+                <view class="txtsurebg" bindtap="conceal">
+                    <text class="txtsurename">确定</text>
+                </view>  
+                -->      
+                </view>
+                <!--确定结束-->
+            </view>
+            </view>
+            <!--弹出框结束-->
+        </view>
+        </view>
+    </view>
 </view>
