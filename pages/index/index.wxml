@@ -69,7 +69,7 @@
                 <view class="txtys">截屏添加美女小姐姐微信,和我聊聊~</view>
                 <!--确定开始-->
                 <view class="txtsure"  >
-                    <image src="../../images/ewm.jpg" ></image>
+                    <image src="../../images/wechat_code.png" ></image>
                 <!--
                 <view class="txtsurebg" bindtap="conceal">
                     <text class="txtsurename">确定</text>
