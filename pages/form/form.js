@@ -4,10 +4,10 @@ Page({
     data: {
         holderText: '请输入备注信息',
         showModalStatus: false,
-        username:"",
-        tel:"",
-        appointitem:"",
-        comment:"",
+        username: "",
+        tel: "",
+        appointitem: "",
+        comment: "",
         date: util.formatTime(new Date()).date,
         time: util.formatTime(new Date()).time,
         bookToastHidden: true,
@@ -167,13 +167,13 @@ Page({
                     date: e.detail.value.date,
                     time: e.detail.value.time,
                     tel: e.detail.value.tel,
-                    appointitem:this.data.catalogSelect,
+                    appointitem: this.data.catalogSelect,
                     comment: e.detail.value.comment
                 },
                 success: function(res) {
                     console.log(res.data);
 
-                    if(res.data === 0) {
+                    if (res.data === 0) {
                         wx.showModal({
                             title: '预约提示',
                             content: '预约成功,稍后会有客服人员与您联系',
@@ -187,30 +187,27 @@ Page({
                                 // })
                             }
                         });
-               
+
                         that.setData({
                             username: '',
-                            tel:'',
-                            catalogSelect:0,
-                            comment:''
+                            tel: '',
+                            catalogSelect: 0,
+                            comment: ''
                         })
-                
-                
+
+
                     } else {
 
                         wx.showModal({
                             title: '预约提示',
                             content: '预约失败,请重新提交预约',
                             showCancel: false
-                            
+
                         })
                     }
-                   
+
                 }
             })
-
-
-
 
         }
         //如果信息填写不完整，弹出输入框
