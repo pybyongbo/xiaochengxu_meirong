@@ -17,6 +17,40 @@ Page({
         showContact: false,
         flag: true
     },
+    onLoad: function(e) {
+        wx.showShareMenu({
+            withShareTicket: true
+        })
+    },
+    onShareAppMessage: function(ops) {
+
+        return {
+            title: '小程序首页',
+            path: `pages/index/index`,
+            success: function(res) {
+                //转发成功
+                console.log("转发成功:" + JSON.stringify(res));
+                var shareTickets = res.shareTickets;
+
+                if (shareTickets.length === 0) {
+                    return false;
+                }
+
+                wx.getShareInfo({
+                    shareTickets: shareTickets[0],
+                    success: function(res) {
+                        console.log(res);
+                    }
+                })
+            },
+            fail: function(res) {
+                //转发失败
+                console.log("转发失败:" + JSON.stringify(res));
+            }
+
+        }
+
+    },
     // 跳转至详情页
     navigateDetail: function(e) {
         wx.navigateTo({

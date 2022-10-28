@@ -8,7 +8,7 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#6caae4",
-        "navigationBarTitleText": "小程序测试11",
+        "navigationBarTitleText": "小程序测试",
         "navigationBarTextStyle": "black"
     },
     "tabBar": {

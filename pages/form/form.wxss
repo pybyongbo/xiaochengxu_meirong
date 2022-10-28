@@ -10,6 +10,7 @@
     width: 90%;
     margin: 0 auto 15px;
     position: relative;
+    overflow: hidden;
 }
 
 .section .label {
@@ -33,6 +34,16 @@
     line-height: 80rpx;
     font-size: 30rpx;
     color: #000;
+}
+
+.section .wxtxt55 {
+    width: 55%;
+    float: left;
+}
+
+.section .wxtxt100 {
+    width: 96%;
+    float: left;
 }
 
 .ar_picker {
@@ -120,6 +131,12 @@
 button.btn {
     width: 90%;
     margin: 0 auto;
+}
+
+button.getcode {
+    width: 35%!important;
+    margin-left: 5%;
+    float: left;
 }
 
 

@@ -1,10 +1,13 @@
-//预约表单页面 11cd6e
-var util = require('../../utils/util')
+//预约表单页面 
+var util = require('../../utils/util');
+const app = getApp();
 Page({
     data: {
         holderText: '请输入备注信息',
         showModalStatus: false,
         username: "",
+        nickName:"",
+        showBtn: true,
         tel: "",
         appointitem: "",
         comment: "",
@@ -38,6 +41,87 @@ Page({
             }
         ],
         catalogSelect: 0, //判断是否选中
+    },
+
+    onShow: function() {
+
+        // console.log(app.globalData);
+        // if (!getApp().globalData.userInfo) {
+
+        //     wx.getSetting({
+        //         success(res) {
+
+        //             if (res.authSetting['scope.userInfo']) {
+        //                 wx.authorize({
+        //                     scope: 'scope.userInfo',
+        //                 })
+        //             }
+        //             // console.log(res);
+        //         }
+        //     });
+        // }
+
+
+        // if (app.globalData.userInfo) {
+        //     console.log(0);
+        //     this.setData({
+        //         userInfo: app.globalData.userInfo,
+        //         hasUserInfo: true
+        //     })
+        // } else if (this.data.canIUse) {
+        //     console.log(1);
+        //     app.userInfoReadyCallback = res => {
+        //         this.setData({
+        //             userInfo: res.userInfo,
+        //             hasUserInfo: true
+        //         })
+        //     }
+        // } else {
+        //     console.log(2);
+        //     wx.getUserInfo({
+        //         success: res => {
+        //             app.globalData.userInfo = res.userInfo
+        //             this.setData({
+        //                 userInfo: res.userInfo,
+        //                 hasUserInfo: true
+        //             })
+        //         }
+        //     })
+        // }
+        console.log(app.globalData.userInfo);
+
+        if (app.globalData.userInfo) {
+            // showBtn
+            this.setData({ //把选中值放入判断值
+                showBtn: false,
+                nickName:app.globalData.userInfo.nickName
+            });
+            console.log("11")
+        } else {
+            console.log("22");
+        }
+
+    },
+
+    handleUserInfo(e) {
+        let msg = e.detail.errMsg;
+        console.log(e);
+        if (msg === 'getUserInfo:ok') {
+            let user = e.detail.userInfo;
+            user.encryptedData = e.detail.encryptedData;
+            user.iv = e.detail.iv;
+            // util.setDataBase('islogin', true); //set 本地数据
+            // util.login(user, this.handleLogin.bind(this))
+            // util.setData({
+            //     islogin: false
+            // });
+        } else {
+            // util.setDataBase('islogin', false); //set 本地数据
+            // this.setData({
+            //     islogin: true
+            // });
+            // util.showModal('五色糖，申请获得您的公开信息（头像，昵称等）。授权后，您能体验到我们更完善的功能，谢谢您关注五色糖。', false, this);
+        }
     },
 
     // 日期选择
